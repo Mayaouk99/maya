@@ -1,0 +1,101 @@
+/* Partagé par les onglets Likes, Messages et Compte */
+.tab-screen {
+  padding-bottom: calc(80px + var(--safe-bottom));
+}
+.tab-header {
+  padding: 10px 20px 16px;
+}
+.tab-serif {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+.tab-sub {
+  margin-top: 8px;
+  color: var(--ink-2);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.tab-scroll {
+  padding: 0 16px 30px;
+}
+.tab-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 60px 20px;
+}
+.tab-empty p {
+  max-width: 290px;
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+.tab-empty-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: var(--glass);
+  border: 1px solid var(--line);
+  margin-bottom: 8px;
+}
+
+.likes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.like-card {
+  position: relative;
+  aspect-ratio: 3 / 4.2;
+  border-radius: 24px;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--line);
+  transition: transform 0.18s var(--ease-out);
+}
+.like-card:active {
+  transform: scale(0.97);
+}
+.like-img {
+  position: absolute;
+  inset: 0;
+}
+.like-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(8, 12, 10, 0.85) 0%, transparent 50%);
+}
+.like-compat {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.like-info {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  gap: 2px;
+}
+.like-info strong {
+  font-size: 16px;
+}
+.like-info span {
+  font-size: 12px;
+  color: var(--ink-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

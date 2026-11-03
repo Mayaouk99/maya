@@ -1,0 +1,279 @@
+.home {
+  padding-bottom: calc(92px + var(--safe-bottom));
+}
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 18px 14px;
+}
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.home-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--accent);
+  background: radial-gradient(120% 120% at 30% 20%, #3c4c43 0%, #141b17 70%);
+  border: 1px solid var(--line-2);
+}
+.home-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.home-header-actions {
+  display: flex;
+  gap: 8px;
+}
+.home-map-btn {
+  background: var(--paper);
+  color: var(--paper-ink);
+}
+
+/* Pile de cartes */
+.deck {
+  position: relative;
+  flex: 1;
+  margin: 0 14px;
+  min-height: 0;
+}
+.swipe-card {
+  position: absolute;
+  inset: 0 0 20px 0;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #151c18;
+  box-shadow:
+    0 30px 60px -24px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  touch-action: pan-y;
+  user-select: none;
+  will-change: transform;
+}
+.swipe-card.is-top {
+  cursor: grab;
+}
+.swipe-card.is-top:active {
+  cursor: grabbing;
+}
+.swipe-img {
+  position: absolute;
+  inset: 0;
+}
+.swipe-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 12, 10, 0.35) 0%, transparent 22%),
+    linear-gradient(0deg, rgba(8, 12, 10, 0.92) 0%, rgba(8, 12, 10, 0.55) 26%, transparent 52%);
+  pointer-events: none;
+}
+.swipe-top {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swipe-chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(12, 16, 14, 0.4);
+}
+.swipe-info {
+  position: absolute;
+  left: 20px;
+  right: 16px;
+  bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+.swipe-info h2 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.swipe-info h2 span {
+  font-weight: 500;
+}
+.swipe-verified {
+  color: var(--accent);
+}
+.swipe-job {
+  color: var(--ink-2);
+  font-size: 15px;
+  margin-top: 2px;
+}
+.swipe-meta {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.swipe-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 245, 96, 0.2);
+}
+.swipe-more {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.14);
+}
+.swipe-stamp {
+  position: absolute;
+  top: 74px;
+  padding: 8px 16px;
+  border-radius: 14px;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 3px solid currentColor;
+  pointer-events: none;
+}
+.stamp-like {
+  left: 22px;
+  color: var(--accent);
+  rotate: -12deg;
+  background: rgba(12, 16, 14, 0.35);
+}
+.stamp-pass {
+  right: 22px;
+  color: #ff9a8b;
+  rotate: 12deg;
+  background: rgba(12, 16, 14, 0.35);
+}
+
+/* Boutons */
+.deck-actions {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  padding: 2px 0 10px;
+}
+.deck-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: transform 0.18s var(--ease-out);
+}
+.deck-btn:active {
+  transform: scale(0.88);
+}
+.deck-pass {
+  background: var(--glass-2);
+  border: 1px solid var(--line-2);
+  color: #ff9a8b;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.deck-like {
+  background: linear-gradient(180deg, #d4fb76 0%, var(--accent) 45%, var(--accent-2) 100%);
+  color: var(--accent-ink);
+  box-shadow: 0 14px 34px -10px rgba(200, 245, 96, 0.55);
+}
+
+/* Pile vide */
+.deck-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  padding: 20px;
+}
+.deck-empty p {
+  max-width: 300px;
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+.deck-empty-rings {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+}
+.deck-empty-rings span {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 245, 96, 0.35);
+  animation: ripple 3s ease-out infinite;
+}
+.deck-empty-rings span:nth-child(2) {
+  animation-delay: 1s;
+}
+.deck-empty-rings span:nth-child(3) {
+  animation-delay: 2s;
+}
+@keyframes ripple {
+  from {
+    transform: scale(0.45);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+.deck-empty-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--bg-3);
+  font-size: 32px;
+  font-weight: 800;
+  border: 2px solid var(--accent);
+}
+.deck-empty-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.deck-empty-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
