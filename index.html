@@ -1,79 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maya — Rencontres sincères</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;background:#fff7f8;color:#2a1a20}
-a{color:inherit;text-decoration:none}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 6%;position:sticky;top:0;background:#fff7f8ee;backdrop-filter:blur(8px);z-index:10}
-.logo{font-weight:800;font-size:1.6rem;color:#e8466b}
-.btn{background:linear-gradient(135deg,#ff6b8b,#e8466b);color:#fff;padding:12px 26px;border-radius:99px;font-weight:600;border:0;cursor:pointer;font-size:1rem}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:60px 6% 80px}
-h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin-bottom:20px}
-h1 span{color:#e8466b}
-.hero p{font-size:1.15rem;opacity:.75;margin-bottom:30px;max-width:480px}
-.deck{position:relative;height:460px;max-width:340px;margin:auto;width:100%}
-.card{position:absolute;inset:0;border-radius:24px;background-size:cover;background-position:center;box-shadow:0 20px 50px #e8466b33;transition:transform .4s,opacity .4s;display:flex;align-items:flex-end;padding:22px;color:#fff;font-size:1.3rem;font-weight:700}
-.card::before{content:"";position:absolute;inset:0;border-radius:24px;background:linear-gradient(transparent 55%,#000a)}
-.card b{position:relative}
-.card small{display:block;font-weight:400;font-size:.9rem;opacity:.9}
-.actions{display:flex;justify-content:center;gap:20px;margin-top:20px}
-.actions button{width:64px;height:64px;border-radius:50%;border:0;background:#fff;font-size:1.6rem;cursor:pointer;box-shadow:0 8px 20px #0001}
-section{padding:70px 6%;text-align:center}
-h2{font-size:2.2rem;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.f{background:#fff;padding:30px;border-radius:20px;box-shadow:0 6px 20px #e8466b14}
-.f div{font-size:2rem;margin-bottom:10px}
-form{max-width:420px;margin:auto;display:grid;gap:12px}
-input,select{padding:14px 18px;border-radius:14px;border:1px solid #f0c9d2;font-size:1rem}
-footer{text-align:center;padding:30px;opacity:.6}
-@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin:0 auto 30px}}
-</style>
-</head>
-<body>
-<nav><div class="logo">♥ Maya</div><a href="#inscription" class="btn">S'inscrire</a></nav>
-
-<div class="hero">
-  <div>
-    <h1>Trouvez quelqu'un qui <span>vous ressemble</span>.</h1>
-    <p>Maya, c'est des rencontres sincères, près de chez vous. Profils vérifiés, zéro faux compte.</p>
-    <a href="#inscription" class="btn">Commencer gratuitement</a>
-  </div>
-  <div>
-    <div class="deck" id="deck"></div>
-    <div class="actions"><button onclick="swipe(-1)">✕</button><button onclick="swipe(1)" style="color:#e8466b">♥</button></div>
-  </div>
-</div>
-
-<section>
-  <h2>Pourquoi Maya ?</h2>
-  <div class="grid">
-    <div class="f"><div>✅</div><h3>Profils vérifiés</h3><p>Chaque membre est vérifié par selfie.</p></div>
-    <div class="f"><div>📍</div><h3>Près de vous</h3><p>Des rencontres dans votre ville.</p></div>
-    <div class="f"><div>💬</div><h3>Vraies conversations</h3><p>Pas de swipe infini, des échanges qui comptent.</p></div>
-  </div>
-</section>
-
-<section id="inscription">
-  <h2>Rejoignez Maya</h2>
-  <form onsubmit="event.preventDefault();this.innerHTML='<h3>🎉 Bienvenue ! On vous écrit très vite.</h3>'">
-    <input required placeholder="Prénom">
-    <input required type="email" placeholder="E-mail">
-    <select><option>Je cherche un homme</option><option>Je cherche une femme</option><option>Peu importe</option></select>
-    <button class="btn">Créer mon profil</button>
-  </form>
-</section>
-
-<footer>© 2026 Maya — Rencontres sincères</footer>
-
-<script>
-const p=[["Léa",27,"Paris","women/44"],["Thomas",30,"Lyon","men/32"],["Inès",25,"Bordeaux","women/68"],["Hugo",29,"Nantes","men/75"],["Camille",31,"Lille","women/21"]];
-const deck=document.getElementById('deck');
-p.reverse().forEach(([n,a,v,img])=>{deck.insertAdjacentHTML('beforeend',`<div class="card" style="background-image:url(https://randomuser.me/api/portraits/${img}.jpg)"><b>${n}, ${a}<small>📍 ${v}</small></b></div>`)});
-function swipe(d){const c=deck.lastElementChild;if(!c)return;c.style.transform=`translateX(${d*150}%) rotate(${d*25}deg)`;c.style.opacity=0;setTimeout(()=>{c.remove();if(!deck.children.length)deck.innerHTML='<div class="card" style="background:#e8466b;justify-content:center"><b>Inscrivez-vous pour voir plus ♥</b></div>'},400)}
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#0e1311" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Maya — des rencontres qui commencent par la compatibilité." />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <title>Maya</title>
+    <script type="module" crossorigin src="/assets/index-BNMFoW3V.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-Dcmh0KTP.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-Blf5KOs7.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
